@@ -1,2 +1,3 @@
-# weightless
-A VR gallery show
+# Weightless
+
+A VR gallery show by Ningxia Zhang.
