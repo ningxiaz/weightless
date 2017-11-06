@@ -1,0 +1,31 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+
+  "name": "weightless",
+  "version": "0.0.1",
+  "description": "A VR art gallery",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "browserify -t glslify client/app.js > public/app.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "browserify": "^7.1.0",
+    "glslify": "^6.0.2"
+  },
+  "engines": {
+    "node": "6.9.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/#!/project/welcome-project"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
