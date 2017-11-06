@@ -9,7 +9,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "browserify -t glslify client/app.js > public/app.js"
+    "build": "mkdir -p public/js && browserify -t glslify client/app.js > public/js/app.js"
   },
   "dependencies": {
     "express": "^4.15.2",
