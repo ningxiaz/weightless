@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weightless - A VR Gallery Show</title>
+    <meta name="description" content="Weightless - A VR Gallery Show">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+
+      <a-scene>
+        <a-assets>
+          <a-asset-item id="room" src="assets/room.obj"></a-asset-item>
+          <img id="woodTexture" src="assets/wood.jpg">
+        </a-assets>
+
+        <a-entity id="cameraRig">
+          <!-- camera -->
+          <a-entity id="head" camera wasd-controls look-controls teleport-controls="type: parabolic; collisionEntities: #floor"></a-entity>
+          <!-- hand controls -->
+          <!-- <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+          <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity> -->
+        </a-entity>
+
+        <a-plane id="floor" src="#woodTexture" position="0 0 0" rotation="-90 0 0" width="100" height="100" repeat="50 50"></a-plane>
+
+        <!-- <a-plane color="white" position="0 8 0" rotation="90 0 0" width="100" height="100"></a-plane> -->
+
+        <a-entity light="type: ambient; color: #333"></a-entity>
+        <a-entity light="type: point; intensity: 1.2; distance: 100; decay: 5.7; color: white"
+          position="3.25 4.9 4.6"></a-entity>
+        <a-sky color="#333"></a-sky>
+
+        <!-- the model's dimension is 12.6 5 9.5 -->
+        <a-entity obj-model="obj: #room" position="0 0 -10" scale="0.1 0.1 0.1" setup="chaing color spheres">
+          <a-entity light="type: point; intensity: 0.5; distance: 100; decay: 3; color: #35225D"
+            position="5 5 8"></a-entity>
+        </a-entity>
+        <a-plane position="-26.3 0 -3.7" width="40" height="10.6" color="white"></a-plane>
+        <a-plane position="26.3 0 -3.7" width="40" height="10.6" color="white"></a-plane>
+        <a-text value="Weightless - A Show in VR" color="#222" width=5 position="0 4 -3.5"></a-text>
+
+        <a-entity position="-3 0 -1">
+          <a-camera></a-camera>
+        </a-entity>
+
+        <!-- <a-entity position="0  0">
+          <a-camera></a-camera>
+        </a-entity> -->
+      </a-scene>
+
+
+  </body>
+</html>
