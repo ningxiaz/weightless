@@ -16,14 +16,7 @@
           <img id="woodTexture" src="assets/wood.jpg">
         </a-assets>
 
-        <a-entity id="cameraRig">
-          <!-- camera -->
-          <a-entity id="head" camera wasd-controls look-controls></a-entity>
-          <!-- hand controls -->
-          <a-entity teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head; type: parabolic; collisionEntities: #floor" hand-controls="right"></a-entity>
-          <!-- <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-          <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity> -->
-        </a-entity>
+        <a-entity id="head" camera universal-controls></a-entity>
 
         <a-plane id="floor" src="#woodTexture" position="0 0 0" rotation="-90 0 0" width="100" height="100" repeat="50 50"></a-plane>
 
